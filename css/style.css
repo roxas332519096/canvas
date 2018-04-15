@@ -1,0 +1,33 @@
+#canvas {
+    background-color:gray;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .actions button {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .actions .actionsEraser {
+    background: black;
+    color: white;
+    
+  }
+  .actions .actionsBrush {
+    background: black;
+    color: white;
+  }
+   
