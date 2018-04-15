@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js"></script>
-  <script src="//at.alicdn.com/t/font_629575_664j8b346lkxogvi.js"></script>
+  <script src="//at.alicdn.com/t/font_629575_nfl1epwnvp7ujtt9.js"></script>
   <title>画板</title>
 </head>
 <body onload="onReady()">
@@ -13,12 +13,12 @@
   <div id="actions" class="actions">
     <ul>
       <li>
-        <svg class="icon" aria-hidden="true">
+        <svg id="pencil" class="icon" aria-hidden="true">
           <use xlink:href="#icon-pencil"></use>
         </svg>
       </li>
       <li>
-        <svg class="icon" aria-hidden="true">
+        <svg id="pen" class="icon" aria-hidden="true">
           <use xlink:href="#icon-pen-copy"></use>
           </svg>
       </li>
@@ -33,22 +33,45 @@
         </svg>
       </li>
       <li>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-download"></use>
+        <svg id="clear" class="icon" aria-hidden="true">
+          <use xlink:href="#icon-trash-b"></use>
         </svg>
       </li>
       <li>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-iostrash"></use>
+        <svg id="downLoad" class="icon" aria-hidden="true">
+          <use xlink:href="#icon-download"></use>
         </svg>
       </li>
     </ul> 
    </div>
   <div id="colorChange" class="colorChange">
-    <button id="black" class='black'></button>
-    <button id="red" class="red"></button>
-    <button id="blue" class="blue"></button>
-    <button id="green" class="green"></button>
+    <li>
+      <svg id="black" class="icon black" aria-hidden="true">
+        <use xlink:href="#icon-point"></use>
+      </svg>
+    </li>
+    <ul>
+      <li>
+        <svg id="red" class="icon red" aria-hidden="true">
+          <use xlink:href="#icon-point"></use>
+        </svg>
+      </li>
+      <li>
+        <svg id="blue" class="icon blue" aria-hidden="true">
+          <use xlink:href="#icon-point"></use>
+        </svg>
+      </li>
+      <li>
+        <svg id="green" class="icon green" aria-hidden="true">
+          <use xlink:href="#icon-point"></use>
+        </svg>
+      </li>
+      <li>
+          <svg id="change" class="icon change" aria-hidden="true">
+            <use xlink:href="#icon-point"></use>
+          </svg>
+      </li>
+     </ul>
   </div>
 
 </body>

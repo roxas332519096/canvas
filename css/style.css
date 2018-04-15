@@ -13,17 +13,22 @@ body,li,ul {
 .icon {
   width: 2em; height: 2em;
   vertical-align: -0.15em;
-  fill: black;
+  fill:currentColor;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 .actions {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 5px;
+  left: 5px;
 }
 
-ul,li{
+.actvie {
+  fill:red;
+}
+
+ul,ol,li{
   display: inline-block;
   list-style: none;
 }
@@ -32,39 +37,42 @@ ul,li{
   position: fixed;
   bottom: 10px;
   right: 10px;
+ }
+
+.colorChange .icon {
+  width: 1.5em;
+  height: 1.5em;
+ }
+
+ .colorChange li {
+   display: block;
+ }
+
+.black {
+  fill: black;
+}
+.red {
+  fill: red;
 }
 
-.colorChange button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: none;
-  text-align: center;
-  font-weight: bold;
+.blue {
+  fill: blue;
 }
 
-button.black {
-  background: black;
+.green {
+  fill: green;
 }
 
-button.red {
-  background: red;
+.colorChange .icon.change {
+  display: block;
 }
 
-button.act{
-  height: 30px;
-  width: 30px;
+.colorChange .icon{
+  display: none;
 }
 
-button.blue {
-  background: blue;
+.colorChange .icon.act{
+  display: block;
 }
 
-button.blue {
-  background: blue;
-}
-
-button.green {
-  background: green;
-}
 

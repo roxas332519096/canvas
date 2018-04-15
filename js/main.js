@@ -4,6 +4,7 @@ function onReady(){
   var eraserEnable = false;
   var strokeStyle = 'black';
   var lineWidth = 3;
+  var changebtn = true;
 
 
   autoSetCanvasSize(canvas);
@@ -124,50 +125,94 @@ function onReady(){
   //改变功能
   function navButton(){
     eraser.onclick = function(){
+     eraser.classList.add('actvie');
+     pen.classList.remove('actvie');
+     brush.classList.remove('actvie');
+     pencil.classList.remove('actvie');
      eraserEnable = true;
   }
     brush.onclick = function(){
+      eraser.classList.remove('actvie');
+      pen.classList.remove('actvie');
+      brush.classList.add('actvie');
+      pencil.classList.remove('actvie');
       lineWidth = 10;
       eraserEnable = false;
     }
     pencil.onclick = function(){
-      lineWidth = 1;
+      eraser.classList.remove('actvie');
+      pen.classList.remove('actvie');
+      brush.classList.remove('actvie');
+      pencil.classList.add('actvie');
+      lineWidth = 0.7;
       eraserEnable = false;
     }
     pen.onclick = function(){
+      eraser.classList.remove('actvie');
+      pen.classList.add('actvie');
+      brush.classList.remove('actvie');
+      pencil.classList.remove('actvie');
       lineWidth = 3;
       eraserEnable = false;
+    }
+    clear.onclick = function(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
+    //保存图片
+    downLoad.onclick = function(){
+      var url = canvas.toDataURL("image/png");
+      var a =document.createElement('a');
+      document.body.appendChild(a);
+      a.href = url;
+      a.download = 'canvas_image';
+      a.target = '_blank';
+      a.click();
     }
   }
   //改变画笔颜色
   function changeColor(){
     red.onclick = function(){
       strokeStyle = 'red';
-      red.classList.add('act');
-      black.classList.remove('act');
-      blue.classList.remove('act');
-      green.classList.remove('act');
+      change.classList.add('red');
+      change.classList.remove('black');
+      change.classList.remove('green');
+      change.classList.remove('blue');
     }
     green.onclick = function(){
       strokeStyle = 'green';
-      red.classList.remove('act');
-      black.classList.remove('act');
-      blue.classList.remove('act');
-      green.classList.add('act');
+      change.classList.add('green');
+      change.classList.remove('black');
+      change.classList.remove('blue');
+      change.classList.remove('red');
     }
     blue.onclick = function(){
       strokeStyle = 'blue';
-      red.classList.remove('act');
-      black.classList.remove('act');
-      blue.classList.add('act');
-      green.classList.remove('act');
+      change.classList.add('blue');
+      change.classList.remove('black');
+      change.classList.remove('red');
+      change.classList.remove('green');
     }
     black.onclick = function(){
       strokeStyle = 'black';
-      black.classList.add('act');
-      red.classList.remove('act');
-      blue.classList.remove('act');
-      green.classList.remove('act');
+      change.classList.add('black');
+      change.classList.remove('blue');
+      change.classList.remove('red');
+      change.classList.remove('green');
+    }
+    change.onclick = function(){
+      changebtn = !changebtn;
+      if(changebtn){
+        black.classList.add('act');
+        red.classList.add('act');
+        blue.classList.add('act');
+        green.classList.add('act');
+      }else{
+        black.classList.remove('act');
+        red.classList.remove('act');
+        blue.classList.remove('act');
+        green.classList.remove('act');
+      }
+      
     }
   }
 }
