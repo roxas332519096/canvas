@@ -3,8 +3,10 @@ function onReady(){
   var ctx = canvas.getContext('2d');
   var eraserEnable = false;
 
+
+
   autoSetCanvasSize(canvas);
-  listenToMouse(canvas);
+  device(canvas);
   navButton();
   
 
@@ -23,9 +25,18 @@ function onReady(){
     canvas.width = pageWidth;
     canvas.height = pageHeight;
   }
+  //监听设备
+  function device(){
+    if(document.body.ontouchstart !== undefined){
+      listenTotouch();
+    }
+    else{
+      listenToMouse();
+    }
+  }
+
  //监听鼠标动作
- 
-  function listenToMouse(canvas){
+  function listenToMouse(){
     var using = false;
     var lastPoint = {x:undefined,y:undefined}
     //鼠标按下
@@ -54,6 +65,41 @@ function onReady(){
     }
     //鼠标松开
     canvas.onmouseup = function(aaa) {
+      using = false;
+    }
+  }
+
+  //监听触屏动作
+ 
+  function listenTotouch(){
+    var using = false;
+    var lastPoint = {x:undefined,y:undefined}
+    //手指按下
+    canvas.ontouchstart = function(aaa){
+      using = true;
+      var x = aaa.touches[0].clientX;
+      var y = aaa.touches[0].clientY;
+      if(eraserEnable){
+        clearLine(x,y);
+      }else{
+        lastPoint = {x:x,y:y}
+      }
+    }
+    //鼠标移动
+    canvas.ontouchmove = function(aaa){
+      var x = aaa.touches[0].clientX;
+      var y = aaa.touches[0].clientY;
+      if (!using) {return}
+      if(eraserEnable){
+        clearLine(x,y);
+      }else{
+        var newPoint = {x:x,y:y}
+        drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+        lastPoint = newPoint;
+      }
+    }
+    //鼠标松开
+    canvas.ontouchend = function(aaa) {
       using = false;
     }
   }
