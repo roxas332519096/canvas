@@ -1,5 +1,5 @@
 #canvas {
-    background-color:gray;
+    background-color:#fff;
     display: block;
     position: fixed;
     top: 0;
@@ -35,3 +35,44 @@
     color: white;
   }
    
+  .colorChange {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .colorChange button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  button.black {
+    background: black;
+  }
+
+  button.red {
+    background: red;
+  }
+
+  button.act{
+    height: 30px;
+    width: 30px;
+  }
+
+  button.blue {
+    background: blue;
+  }
+
+  button.blue {
+    background: blue;
+  }
+
+  button.green {
+    background: green;
+  }
+
+  

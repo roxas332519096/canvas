@@ -2,13 +2,43 @@ function onReady(){
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var eraserEnable = false;
-
+  var strokeStyle = 'green';
+  var lineWidth = 10;
 
 
   autoSetCanvasSize(canvas);
   device(canvas);
   navButton();
   
+
+  red.onclick = function(){
+    strokeStyle = 'red';
+    red.classList.add('act');
+    black.classList.remove('act');
+    blue.classList.remove('act');
+    green.classList.remove('act');
+  }
+  green.onclick = function(){
+    strokeStyle = 'green';
+    red.classList.remove('act');
+    black.classList.remove('act');
+    blue.classList.remove('act');
+    green.classList.add('act');
+  }
+  blue.onclick = function(){
+    strokeStyle = 'blue';
+    red.classList.remove('act');
+    black.classList.remove('act');
+    blue.classList.add('act');
+    green.classList.remove('act');
+  }
+  black.onclick = function(){
+    strokeStyle = 'black';
+    black.classList.add('act');
+    red.classList.remove('act');
+    blue.classList.remove('act');
+    green.classList.remove('act');
+  }
 
  ////////////////////////////////////////////
  //自动自适应窗口大小
@@ -107,16 +137,16 @@ function onReady(){
   //画线
   function drawLine(x1,y1,x2,y2){
     ctx.beginPath();
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = strokeStyle;
     ctx.moveTo(x1, y1);  //起点
-    ctx.lineWidth = 5;
+    ctx.lineWidth = lineWidth;
     ctx.lineTo(x2, y2);  //终点
     ctx.stroke();
     ctx.closePath();
   }
   //橡皮
   function clearLine(x3,y3){
-    ctx.clearRect(x3-5,y3-5,10,10);
+    ctx.clearRect(x3-5,y3-5,20,20);
   }
   //改变功能
   function navButton(){
