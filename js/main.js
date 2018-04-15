@@ -3,14 +3,13 @@ function onReady(){
   var ctx = canvas.getContext('2d');
   var eraserEnable = false;
   var strokeStyle = 'black';
-  var lineWidth = 10;
+  var lineWidth = 3;
 
 
   autoSetCanvasSize(canvas);
   device(canvas);
   navButton();
   changeColor();
-  
   
   
 
@@ -125,13 +124,18 @@ function onReady(){
   //改变功能
   function navButton(){
     eraser.onclick = function(){
-      eraser.className = 'actionsEraser';
-      brush.className  ='brush';
-      eraserEnable = true;
+     eraserEnable = true;
   }
     brush.onclick = function(){
-      brush.className = 'actionsBrush';
-      eraser.className = 'Eraser';
+      lineWidth = 10;
+      eraserEnable = false;
+    }
+    pencil.onclick = function(){
+      lineWidth = 1;
+      eraserEnable = false;
+    }
+    pen.onclick = function(){
+      lineWidth = 3;
       eraserEnable = false;
     }
   }
