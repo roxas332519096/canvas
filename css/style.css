@@ -64,6 +64,8 @@ ul,ol,li{
 }
 
 .colorChange .icon.change {
+  width: 2em;
+  height: 2em;
   display: block;
 }
 
