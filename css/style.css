@@ -7,8 +7,15 @@
   }
   
   body {
-    margin:0;
+    margin:0;padding: 0;
   }
+
+  .icon {
+    width: 5em; height: 5em;
+    vertical-align: -0.15em;
+    fill: red;
+    overflow: hidden;
+ }
   
   .actions {
     position: fixed;
@@ -16,25 +23,11 @@
     left: 0;
   }
 
-  .actions button {
-    width: 60px;
-    height: 60px;
-    border-radius: 40px;
-    border: none;
-    text-align: center;
-    font-weight: bold;
+  ul,li{
+    display: inline-block;
+    list-style: none;
   }
 
-  .actions .actionsEraser {
-    background: black;
-    color: white;
-    
-  }
-  .actions .actionsBrush {
-    background: black;
-    color: white;
-  }
-   
   .colorChange {
     position: fixed;
     bottom: 10px;

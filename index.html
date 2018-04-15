@@ -5,20 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js"></script>
+  <script src="//at.alicdn.com/t/font_629575_664j8b346lkxogvi.js"></script>
   <title>画板</title>
 </head>
 <body onload="onReady()">
-<canvas id="canvas" width="300px" height="300px"></canvas>
-<div id="actions" class="actions">
-  <button id="brush" class='brush'>画笔</button>
-  <button id="eraser" class="eraser">橡皮擦</button>
-</div>
-<div id="colorChange" class="colorChange">
-  <button id="black" class='black'></button>
-  <button id="red" class="red"></button>
-  <button id="blue" class="blue"></button>
-  <button id="green" class="green"></button>
-</div>
+  <canvas id="canvas" width="300px" height="300px"></canvas>
+  <div id="actions" class="actions">
+    <ul>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-pencil"></use>
+        </svg>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-pen"></use>
+          </svg>
+      </li>
+      <li>
+        <svg id="brush" class="icon" aria-hidden="true">
+          <use xlink:href="#icon-brush"></use>
+        </svg>
+      </li>
+      <li>
+        <svg id="eraser" class="icon" aria-hidden="true">
+          <use xlink:href="#icon-eraser"></use>
+        </svg>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-download"></use>
+        </svg>
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-iostrash"></use>
+        </svg>
+      </li>
+    </ul> 
+   </div>
+  <div id="colorChange" class="colorChange">
+    <button id="black" class='black'></button>
+    <button id="red" class="red"></button>
+    <button id="blue" class="blue"></button>
+    <button id="green" class="green"></button>
+  </div>
 
 </body>
 </html>

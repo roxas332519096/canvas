@@ -2,43 +2,17 @@ function onReady(){
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var eraserEnable = false;
-  var strokeStyle = 'green';
+  var strokeStyle = 'black';
   var lineWidth = 10;
 
 
   autoSetCanvasSize(canvas);
   device(canvas);
   navButton();
+  changeColor();
   
-
-  red.onclick = function(){
-    strokeStyle = 'red';
-    red.classList.add('act');
-    black.classList.remove('act');
-    blue.classList.remove('act');
-    green.classList.remove('act');
-  }
-  green.onclick = function(){
-    strokeStyle = 'green';
-    red.classList.remove('act');
-    black.classList.remove('act');
-    blue.classList.remove('act');
-    green.classList.add('act');
-  }
-  blue.onclick = function(){
-    strokeStyle = 'blue';
-    red.classList.remove('act');
-    black.classList.remove('act');
-    blue.classList.add('act');
-    green.classList.remove('act');
-  }
-  black.onclick = function(){
-    strokeStyle = 'black';
-    black.classList.add('act');
-    red.classList.remove('act');
-    blue.classList.remove('act');
-    green.classList.remove('act');
-  }
+  
+  
 
  ////////////////////////////////////////////
  //自动自适应窗口大小
@@ -159,6 +133,37 @@ function onReady(){
       brush.className = 'actionsBrush';
       eraser.className = 'Eraser';
       eraserEnable = false;
+    }
+  }
+  //改变画笔颜色
+  function changeColor(){
+    red.onclick = function(){
+      strokeStyle = 'red';
+      red.classList.add('act');
+      black.classList.remove('act');
+      blue.classList.remove('act');
+      green.classList.remove('act');
+    }
+    green.onclick = function(){
+      strokeStyle = 'green';
+      red.classList.remove('act');
+      black.classList.remove('act');
+      blue.classList.remove('act');
+      green.classList.add('act');
+    }
+    blue.onclick = function(){
+      strokeStyle = 'blue';
+      red.classList.remove('act');
+      black.classList.remove('act');
+      blue.classList.add('act');
+      green.classList.remove('act');
+    }
+    black.onclick = function(){
+      strokeStyle = 'black';
+      black.classList.add('act');
+      red.classList.remove('act');
+      blue.classList.remove('act');
+      green.classList.remove('act');
     }
   }
 }
