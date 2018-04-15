@@ -1,5 +1,9 @@
 #canvas {
     background-color:gray;
+    display: block;
+    position: fixed;
+    top: 0;
+    margin: 0;
   }
   
   body {
