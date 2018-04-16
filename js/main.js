@@ -4,7 +4,7 @@ function onReady(){
   var eraserEnable = false;
   var strokeStyle = 'black';
   var lineWidth = 3;
-  var changebtn = true;
+  var changebtn = false;
 
 
   autoSetCanvasSize(canvas);
