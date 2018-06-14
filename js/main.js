@@ -12,7 +12,6 @@ function onReady(){
   navButton();
   changeColor();
   
-  
 
  ////////////////////////////////////////////
  //自动自适应窗口大小
